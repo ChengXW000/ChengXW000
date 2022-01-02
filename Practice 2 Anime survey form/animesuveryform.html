@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+  <head id="head">
+    <main id="main">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML, CSS">
+    <style>
+:root {
+  --color-white: white;
+  --color-grey: grey;
+  --color-grey-alpha: rgba(108, 122, 137, 0.8);
+  --color-lightblue: lightblue;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-white);
+  margin: 0;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: var(--color-grey);
+  background-image: linear-gradient(
+      1deg,
+      rgba(58, 58, 158, 0.8),
+      rgba(136, 136, 206, 0.7)
+    ),
+    url(https://wallpapers.moviemania.io/phone/movie/372058/8ab2bd/your-name-phone-wallpaper.jpg?w=1536&h=2732);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+h1 {
+  font-weight: 4000;
+  line-height: 1.4;
+}
+
+p {
+  font-size: 1.3rem;
+}
+
+h1,
+p {
+  margin-top: 0;
+  margin-bottom: 0.2rem;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+input,
+button,
+select,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button {
+  border: none;
+}
+
+.container {
+  width: 100%;
+  margin: 3.125rem auto 0 auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+.header {
+  padding: 0 0.625rem;
+  margin-bottom: 1.875rem;
+}
+
+.description {
+  font-style: italic;
+  font-weight: 100;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+}
+
+.clue {
+  margin-left: 0.25rem;
+  font-size: 0.9rem;
+  color: lightgrey;
+}
+
+.text-center {
+  text-align: center;
+}
+
+form {
+  background: var(--color-grey-alpha);
+  padding: 2.5rem 0.625rem;
+  border-radius: 0.25rem;
+}
+
+@media (min-width: 480px) {
+  form {
+    padding: 2.5rem;
+  }
+}
+
+.form-group {
+  margin: 0 auto 1.25rem auto;
+  padding: 0.25rem;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  height: 2.375rem;
+  padding: 0.375rem 0.75rem;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.input-radio,
+.input-checkbox {
+  display: inline-block;
+  margin-right: 0.625rem;
+  min-height: 1.25rem;
+  min-width: 1.25rem;
+}
+
+.input-textarea {
+  min-height: 120px;
+  width: 100%;
+  padding: 0.625rem;
+  resize: vertical;
+}
+
+.submit-button {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--color-lightblue);
+  color: inherit;
+  border-radius: 2px;
+  cursor: pointer;
+}
+    </style>
+  </head>
+<div class="container"> 
+  <header class="header">  
+    <h1 id="title" class="text-center">Anime Preference Survey Form</h1>
+    <p id="description" class="description text-center">I will give you a Cookie if you do the survey</p>
+  </header>
+  <form id="survey-form">
+    <div class="form-group">
+     <label id="name-label" for="name">Name</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          class="form-control"
+          placeholder="Enter your name"
+          required
+        />
+    </div>
+    <div class="form-group"> 
+      <label id="email-label" for="email">Email</label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        class="form-control"
+        placeholder="Enter your Email"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label id="number-label" for="number"
+        >Age<span class="clue">(optional)</span></label
+      >
+      <input
+        type="number"
+        name="age"
+        id="number"
+        min="10"
+        max="99"
+        class="form-control"
+        placeholder="Age"
+      />
+    </div>
+    <div class="form-group">
+      <p>What is your occupation status?</p>
+      <select id="dropdown" name="role" class="form-control" required>
+        <option disabled selected value>Select current occupation status</option>
+        <option value="student">Student</option>
+        <option value="job">Full Time Job</option>
+        <option value="Job">Part Time Job</option>
+        <option value="freelance">Freelancer</option>
+        <option value="preferNo">Prefer not to say</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <p>Where do you usually watch anime?</p>
+      <label>
+        <input
+          name="user-recommend"
+          value="Official"
+          type="radio"
+          class="input-radio"
+          checked
+        />Netflix/Crunchyroll</label
+      >
+      <label>
+        <input
+          name="user-recommend"
+          value="tv"
+          type="radio"
+          class="input-radio"
+        />Television</label
+      >
+
+      <label
+        ><input
+          name="user-recommend"
+          value="others"
+          type="radio"
+          class="input-radio"
+        />Pirate website</label
+      >
+    </div>
+    <div class="form-group">
+      <p>
+        How often do you watch anime?
+      </p>
+      <select id="watch" name="mostwatch" class="form-control" required>
+        <option disabled selected value>Select an option</option>
+        <option value="Notwatch">Do not watch at all</option>
+        <option value="Onceperyear">Once per year</option>
+        <option value="Oncepermonth">Once per month</option>
+        <option value="Onceperweek">Once per week</option>
+        <option value="morethanthat">More than all of the option</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <p>
+        What genre of anime do you watch?
+        <span class="clue">(Check all that apply)</span>
+      </p>
+
+      <label
+        ><input
+          name="prefer"
+          value="Action"
+          type="checkbox"
+          class="input-checkbox"
+        />Action</label
+      >
+      <label>
+        <input
+          name="prefer"
+          value="Adventure"
+          type="checkbox"
+          class="input-checkbox"
+        />Adventure</label
+      >
+      <label
+        ><input
+          name="prefer"
+          value="Comedy"
+          type="checkbox"
+          class="input-checkbox"
+        />Comedy</label
+      >
+      <label
+        ><input
+          name="prefer"
+          value="Fantasy"
+          type="checkbox"
+          class="input-checkbox"
+        />Fantasy</label
+      >
+      <label
+        ><input
+          name="prefer"
+          value="Historical"
+          type="checkbox"
+          class="input-checkbox"
+        />Historical</label
+      >
+      <label
+        ><input
+          name="prefer"
+          value="Isekai"
+          type="checkbox"
+          class="input-checkbox"
+        />Isekai</label
+      >
+      <label
+        ><input
+          name="prefer"
+          value="Martial-arts"
+          type="checkbox"
+          class="input-checkbox"
+        />Martial arts</label
+      >
+      <label
+        ><input
+          name="prefer"
+          value="Mystery"
+          type="checkbox"
+          class="input-checkbox"
+        />Mystery</label
+      >
+      <label
+        ><input
+          name="prefer"
+          value="Romance"
+          type="checkbox"
+          class="input-checkbox"
+        />Romance</label
+      >
+      <label
+        ><input
+          name="prefer"
+          value="Sci-fi"
+          type="checkbox"
+          class="input-checkbox"
+        />Science fiction</label
+      >
+      <label
+        ><input
+          name="prefer"
+          value="School"
+          type="checkbox"
+          class="input-checkbox"
+        />School</label
+      >
+      <label
+        ><input
+          name="prefer"
+          value="Slice-of-life"
+          type="checkbox"
+          class="input-checkbox"
+        />Slice of life</label
+      >
+      <label
+        ><input
+          name="prefer"
+          value="Supernatural"
+          type="checkbox"
+          class="input-checkbox"
+        />Supernatural</label
+      >
+    </div>
+    <div class="form-group">
+      <p>Any suggestions?</p>
+      <textarea
+        id="comments"
+        class="input-textarea"
+        name="comment"
+        placeholder="Enter your comment here..."
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" id="submit" class="submit-button">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+  <body>
+
+ </body>
+</html>
