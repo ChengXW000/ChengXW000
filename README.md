@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @ChengXW000
 - 👀 I’m interested in programming/ web development/ app development.
-- 🌱 I’m currently learning HTML, CSS, JS
+- 🌱 I’m currently learning HTML, CSS, JS myself
 - 💞️ I’m not looking to collaborate at the moment.
 - 📫  
 
