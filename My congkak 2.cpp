@@ -1,3 +1,4 @@
+//There might be some bug because it is not a perfect code but I tried to debugged it everytime I found some so for most part it should be fine
 #include <iostream>
 #include <ctime>
 #include <fstream>
