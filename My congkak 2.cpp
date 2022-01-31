@@ -469,6 +469,7 @@ void Welcome(int board[], int board_size, int num) //Function to welcome
 
         case '4':
         	cout<<"Shutting Down......"; // shut down program
+		exit(0);
             break; 
 
         default:
